@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="escuelaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="modulos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="operaciones" Relationship="Self.FK__operacion__idMod__4D94879B" FromRole="modulos" ToRole="operaciones" />
+  </EntityType>
+  <EntityType Name="operaciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idModulos" Type="Int32" />
+    <NavigationProperty Name="modulos" Relationship="Self.FK__operacion__idMod__4D94879B" FromRole="operaciones" ToRole="modulos" />
+    <NavigationProperty Name="rol_Operaciones" Relationship="Self.FK__rol_Opera__idOpe__5165187F" FromRole="operaciones" ToRole="rol_Operaciones" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="rol_Operaciones" Relationship="Self.FK__rol_Opera__idRol__5070F446" FromRole="Rol" ToRole="rol_Operaciones" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__idRol__398D8EEE" FromRole="Rol" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="rol_Operaciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idRol" Type="Int32" />
+    <Property Name="idOperacion" Type="Int32" />
+    <NavigationProperty Name="operaciones" Relationship="Self.FK__rol_Opera__idOpe__5165187F" FromRole="rol_Operaciones" ToRole="operaciones" />
+    <NavigationProperty Name="Rol" Relationship="Self.FK__rol_Opera__idRol__5070F446" FromRole="rol_Operaciones" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idRol" Type="Int32" />
+    <NavigationProperty Name="Rol" Relationship="Self.FK__Usuarios__idRol__398D8EEE" FromRole="Usuarios" ToRole="Rol" />
+  </EntityType>
+  <Association Name="FK__operacion__idMod__4D94879B">
+    <End Role="modulos" Type="Self.modulos" Multiplicity="0..1" />
+    <End Role="operaciones" Type="Self.operaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="modulos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="operaciones">
+        <PropertyRef Name="idModulos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__rol_Opera__idOpe__5165187F">
+    <End Role="operaciones" Type="Self.operaciones" Multiplicity="0..1" />
+    <End Role="rol_Operaciones" Type="Self.rol_Operaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operaciones">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rol_Operaciones">
+        <PropertyRef Name="idOperacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__rol_Opera__idRol__5070F446">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+    <End Role="rol_Operaciones" Type="Self.rol_Operaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="rol_Operaciones">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuarios__idRol__398D8EEE">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="escuelaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="modulos" EntityType="Self.modulos" />
+    <EntitySet Name="operaciones" EntityType="Self.operaciones" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" />
+    <EntitySet Name="rol_Operaciones" EntityType="Self.rol_Operaciones" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK__operacion__idMod__4D94879B" Association="Self.FK__operacion__idMod__4D94879B">
+      <End Role="modulos" EntitySet="modulos" />
+      <End Role="operaciones" EntitySet="operaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__rol_Opera__idOpe__5165187F" Association="Self.FK__rol_Opera__idOpe__5165187F">
+      <End Role="operaciones" EntitySet="operaciones" />
+      <End Role="rol_Operaciones" EntitySet="rol_Operaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__rol_Opera__idRol__5070F446" Association="Self.FK__rol_Opera__idRol__5070F446">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="rol_Operaciones" EntitySet="rol_Operaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuarios__idRol__398D8EEE" Association="Self.FK__Usuarios__idRol__398D8EEE">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

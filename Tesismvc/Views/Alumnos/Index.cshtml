@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Tesismvc.Models.Alumnos>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <link href="~/Content/Tablas.css" rel="stylesheet" type="text/css" />
+</head>
+<h2>Index</h2>
+@if (User.IsInRole("Admin"))
+{
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso.Nombre_Curso)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Apellido)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Direccion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Curso.Nombre_Curso)
+    </td>
+    @if (User.IsInRole("Admin"))
+    {
+     <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id_Alumno }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id_Alumno }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id_Alumno })
+     </td>
+    }
+    
+</tr>
+    }
+
+</table>

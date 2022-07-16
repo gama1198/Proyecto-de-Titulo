@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44c62914458a4063b6b37f560f429279" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Alumnos" Width="1.5" PointX="3.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Asignatura" Width="1.5" PointX="5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Asistencia" Width="1.5" PointX="7.625" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Curso" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Docente" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Estado_Academico" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Estado_Asistencia" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Estado_Matricula" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.genero" Width="1.5" PointX="10.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Matricula" Width="1.5" PointX="10.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.Notas" Width="1.5" PointX="5.375" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.role" Width="1.5" PointX="7.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaActualizadoModel.user" Width="1.5" PointX="9.875" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Alumnos__idcurso__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Asistenci__idalu__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Notas__idalumno__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Asignatur__idPro__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Asistenci__Estad__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Asistenci__Id_Do__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Asistenci__idcur__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Notas__idcurso__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Docente__Nivel_A__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Notas__idprofeso__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__Matricula__Gener__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaActualizadoModel.FK__user__rol__5812160E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

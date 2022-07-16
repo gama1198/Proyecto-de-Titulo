@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Userid" Type="Int32" />
+    <Property Name="Role1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="user" Relationship="Self.FK__role__Userid__25869641" FromRole="role" ToRole="user" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="role" Relationship="Self.FK__role__Userid__25869641" FromRole="user" ToRole="role" />
+  </EntityType>
+  <Association Name="FK__role__Userid__25869641">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="role" Type="Self.role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="role">
+        <PropertyRef Name="Userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="role" EntityType="Self.role" />
+    <EntitySet Name="user" EntityType="Self.user" />
+    <AssociationSet Name="FK__role__Userid__25869641" Association="Self.FK__role__Userid__25869641">
+      <End Role="user" EntitySet="user" />
+      <End Role="role" EntitySet="role" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

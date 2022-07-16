@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Tesismvc.Models.Curso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <link href="~/Content/Tablas1.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<h2>Cursos</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Registrar", "Create")
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Curso)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre_Curso)
+    </td>
+
+    @if (User.IsInRole("Admin"))
+    {
+     <td>
+       @Html.ActionLink("Edit", "Edit", new { id = item.id_Curso }) |
+       @Html.ActionLink("Details", "Details", new { id = item.id_Curso }) |
+       @Html.ActionLink("Delete", "Delete", new { id = item.id_Curso })
+      </td>
+    }
+        
+</tr>
+    }
+
+</table>

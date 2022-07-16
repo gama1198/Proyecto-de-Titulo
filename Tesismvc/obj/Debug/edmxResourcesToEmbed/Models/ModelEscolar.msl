@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Sistema_EscolarModel2StoreContainer" CdmEntityContainer="Sistema_EscolarEntities2">
+    <EntitySetMapping Name="Alumnos">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Alumnos">
+        <MappingFragment StoreEntitySet="Alumnos">
+          <ScalarProperty Name="id_Alumno" ColumnName="id_Alumno" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido_p" ColumnName="Apellido_p" />
+          <ScalarProperty Name="Apellido_m" ColumnName="Apellido_m" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="idcurso" ColumnName="idcurso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Asignatura">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Asignatura">
+        <MappingFragment StoreEntitySet="Asignatura">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="idProfesor" ColumnName="idProfesor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Asistencia">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Asistencia">
+        <MappingFragment StoreEntitySet="Asistencia">
+          <ScalarProperty Name="idasistencia" ColumnName="idasistencia" />
+          <ScalarProperty Name="idalumno" ColumnName="idalumno" />
+          <ScalarProperty Name="Id_Docente" ColumnName="Id_Docente" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="idcurso" ColumnName="idcurso" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Curso">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Curso">
+        <MappingFragment StoreEntitySet="Curso">
+          <ScalarProperty Name="id_Curso" ColumnName="id_Curso" />
+          <ScalarProperty Name="Nombre_Curso" ColumnName="Nombre_Curso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Docente">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Docente">
+        <MappingFragment StoreEntitySet="Docente">
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Nivel_Academico" ColumnName="Nivel_Academico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado_Academico">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Estado_Academico">
+        <MappingFragment StoreEntitySet="Estado_Academico">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nivel_Academico" ColumnName="Nivel_Academico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado_Asistencia">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Estado_Asistencia">
+        <MappingFragment StoreEntitySet="Estado_Asistencia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Asistencia" ColumnName="Asistencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado_Matricula">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Estado_Matricula">
+        <MappingFragment StoreEntitySet="Estado_Matricula">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Estados" ColumnName="Estados" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="genero">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.genero">
+        <MappingFragment StoreEntitySet="genero">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Genero1" ColumnName="Genero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matricula">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Matricula">
+        <MappingFragment StoreEntitySet="Matricula">
+          <ScalarProperty Name="id_Matricula" ColumnName="id_Matricula" />
+          <ScalarProperty Name="Rut" ColumnName="Rut" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido_p" ColumnName="Apellido_p" />
+          <ScalarProperty Name="Apellido_m" ColumnName="Apellido_m" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notas">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.Notas">
+        <MappingFragment StoreEntitySet="Notas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nota" ColumnName="Nota" />
+          <ScalarProperty Name="idalumno" ColumnName="idalumno" />
+          <ScalarProperty Name="idcurso" ColumnName="idcurso" />
+          <ScalarProperty Name="idprofesor" ColumnName="idprofesor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.role">
+        <MappingFragment StoreEntitySet="role">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role1" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="Sistema_EscolarModel2.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

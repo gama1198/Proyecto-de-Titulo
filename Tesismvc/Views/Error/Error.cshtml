@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2>Error</h2>
+
+<h3>Accesso denegado</h3>
+@if (ViewBag.operacion != "")
+{
+    <p>@ViewBag.operacion</p>
+}
+@if (ViewBag.modulo != "")
+{
+    <p>@ViewBag.modulo</p>
+}
+@if (ViewBag.msjeErrorExcepcion != "")
+{
+    <p>@ViewBag.msjeErrorExcepcion</p>
+}

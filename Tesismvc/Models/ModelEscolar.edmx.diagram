@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b091514ab8c340d48b3e66d3df1933b6" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Alumnos" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Asignatura" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Asistencia" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Curso" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Docente" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Estado_Academico" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Estado_Asistencia" Width="1.5" PointX="7.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Estado_Matricula" Width="1.5" PointX="9.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.genero" Width="1.5" PointX="7.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Matricula" Width="1.5" PointX="10" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.Notas" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.role" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistema_EscolarModel2.user" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Alumnos__idcurso__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Asistenci__idalu__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Notas__idalumno__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Asignatur__idPro__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Asistenci__Estad__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Asistenci__Id_Do__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Asistenci__idcur__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Notas__idcurso__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Docente__Nivel_A__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Notas__idprofeso__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__Matricula__Gener__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistema_EscolarModel2.FK__user__rol__1DB06A4F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

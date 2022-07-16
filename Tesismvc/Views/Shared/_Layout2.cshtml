@@ -1,0 +1,144 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("MY APP", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    <li>@Html.ActionLink("Services", "Service", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+
+                            <li>@Html.ActionLink("User List", "getUserList", "Home")</li>
+                            <li>@Html.ActionLink("Cursos", "Index", "Cursoes")</li>
+                            <li>@Html.ActionLink("Profesores", "Index", "Docentes")</li>
+
+                        }
+                        if (User.IsInRole("Admin") || User.IsInRole("Profesor"))
+                        {
+
+                            <li>@Html.ActionLink("Alumnos", "Index", "Alumnos")</li>
+                            <li>@Html.ActionLink("Asistencias", "Index", "Asistencias")</li>
+                            <li>@Html.ActionLink("Notas", "Index", "Notas")</li>
+
+
+                            <li><a href="">Dear @User.Identity.Name</a></li>
+                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                        }
+
+
+
+                    }
+                    else
+
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<li>
+    <a href="" @Url.Action("Index ", "Home") " class="active">
+        <span class="icon"><i class="fas fa-home"></i></span>
+        <span class="item">Home</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-desktop"></i></span>
+        <span class="item">My Dashboard</span>
+    </a>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="icon"><i class="fas fa-user-friends"></i></span>
+        <span class="item"> Profesor</span>
+
+    </a>
+
+
+
+<li>
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="true">
+        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+        <span class="item">Perfomance</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+    </ul>
+</li>
+
+
+
+
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+        <span class="item">Perfomance</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-database"></i></span>
+        <span class="item">Development</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-chart-line"></i></span>
+        <span class="item">Reports</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-user-shield"></i></span>
+        <span class="item">Admin</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <span class="icon"><i class="fas fa-cog"></i></span>
+        <span class="item">Settings</span>
+    </a>
+</li>
